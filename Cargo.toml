@@ -1,11 +1,11 @@
 [package]
 name = "tree-sitter-printf"
-description = "printf grammar for the tree-sitter parsing library"
-version = "0.2.0"
+description = "Injectable printf format grammar for tree-sitter"
+version = "0.3.0"
 keywords = ["incremental", "parsing", "printf"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/ObserverOfTime/tree-sitter-printf"
-edition = "2018"
+repository = "https://github.com/tree-sitter-grammars/tree-sitter-printf"
+edition = "2021"
 license = "MIT"
 
 build = "bindings/rust/build.rs"
