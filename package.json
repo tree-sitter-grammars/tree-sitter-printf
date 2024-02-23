@@ -1,11 +1,11 @@
 {
   "name": "tree-sitter-printf",
-  "version": "0.3.0",
-  "description": "Injectable grammar for printf formats",
+  "version": "0.3.1",
+  "description": "Injectable printf format grammar for tree-sitter",
   "repository": "tree-sitter-grammars/tree-sitter-printf",
   "main": "bindings/node",
   "scripts": {
-    "build": "tree-sitter generate",
+    "build": "tree-sitter generate --no-bindings",
     "test": "tree-sitter test"
   },
   "author": {
@@ -29,11 +29,12 @@
     "nan": "^2.18.0"
   },
   "devDependencies": {
-    "tree-sitter-cli": "~0.21.0-pre-release-1"
+    "tree-sitter-cli": "~0.21.0"
   },
   "tree-sitter": [
     {
-      "scope": "source.printf"
+      "scope": "source.printf",
+      "highlights": "queries/highlights.scm"
     }
   ]
 }

@@ -1,15 +1,14 @@
-name: Test grammar
+name: CI
 
 on:
   push:
-    branches: ["*"]
+    branches: [main]
     paths:
       - grammar.js
       - src/**
       - bindings/**
       - binding.gyp
   pull_request:
-    branches: ["*"]
     paths:
       - grammar.js
       - src/**
@@ -18,6 +17,18 @@ on:
 
 jobs:
   test:
-    uses: tree-sitter-grammars/.github/.github/workflows/ci.yml@main
-    with:
-      test-library: true
+    name: Test parsers
+    runs-on: ${{matrix.os}}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-14]
+    steps:
+      - name: Set up repository
+        uses: tree-sitter-grammars/actions/setup@main
+        with:
+          node-version: ${{vars.NODE_VERSION}}
+      - name: Run tests
+        uses: tree-sitter-grammars/actions/test@main
+        with:
+          test-library: ${{runner.os == 'Linux'}}
