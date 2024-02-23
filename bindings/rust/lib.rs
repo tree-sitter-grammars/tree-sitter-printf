@@ -34,6 +34,9 @@ pub fn language() -> Language {
 /// [`node-types.json`]: https://tree-sitter.github.io/tree-sitter/using-parsers#static-node-types
 pub const NODE_TYPES: &str = include_str!("../../src/node-types.json");
 
+/// The syntax highlighting queries.
+pub const HIGHLIGHTS_QUERY: &str = include_str!("../../queries/highlights.scm");
+
 #[cfg(test)]
 mod tests {
     #[test]

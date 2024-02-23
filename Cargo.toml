@@ -13,6 +13,7 @@ include = [
   "bindings/rust/*",
   "grammar.js",
   "src/*",
+  "queries/*",
 ]
 
 [lib]
