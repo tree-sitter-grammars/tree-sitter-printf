@@ -24,11 +24,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-14]
     steps:
-      - name: Set up repository
-        uses: tree-sitter-grammars/actions/setup@main
-        with:
-          node-version: ${{vars.NODE_VERSION}}
-      - name: Run tests
-        uses: tree-sitter-grammars/actions/test@main
-        with:
-          test-library: ${{runner.os == 'Linux'}}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up tree-sitter
+        uses: tree-sitter/setup-action/cli@v1
+      - name: Run parser and binding tests
+        uses: tree-sitter/parser-test-action@v2
