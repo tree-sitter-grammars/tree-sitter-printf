@@ -2,7 +2,6 @@
   "grammars": [
     {
       "name": "printf",
-      "path": ".",
       "scope": "source.printf",
       "highlights": "queries/highlights.scm"
     }
