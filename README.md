@@ -5,6 +5,7 @@
 [![matrix][matrix]](https://matrix.to/#/#tree-sitter-chat:matrix.org)
 [![npm][npm]](https://www.npmjs.com/package/tree-sitter-printf)
 [![crates][crates]](https://crates.io/crates/tree-sitter-printf)
+[![pypi][pypi]](https://pypi.org/project/tree-sitter-printf/)
 
 Injectable grammar for printf formats.
 
@@ -26,3 +27,4 @@ Injectable grammar for printf formats.
 [matrix]: https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&label=matrix
 [npm]: https://img.shields.io/npm/v/tree-sitter-printf?logo=npm
 [crates]: https://img.shields.io/crates/v/tree-sitter-printf?logo=rust
+[pypi]: https://img.shields.io/pypi/v/tree-sitter-printf?logo=pypi&logoColor=ffd242
