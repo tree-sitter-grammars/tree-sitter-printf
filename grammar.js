@@ -26,9 +26,9 @@ module.exports = grammar({
 
     flags: _ => /[-#0 +'I]/,
 
-    width: _ => /0?[0-9*]+/,
+    width: _ => /0?[0-9]+|\*/,
 
-    precision: _ => /\.[0-9]*/,
+    precision: _ => /\.([0-9]*|\*)/,
 
     size: _ => token(prec(1, choice(
       'hh',

@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "printf",
   "rules": {
     "format_string": {
@@ -92,11 +93,11 @@
     },
     "width": {
       "type": "PATTERN",
-      "value": "0?[0-9*]+"
+      "value": "0?[0-9]+|\\*"
     },
     "precision": {
       "type": "PATTERN",
-      "value": "\\.[0-9]*"
+      "value": "\\.([0-9]*|\\*)"
     },
     "size": {
       "type": "TOKEN",
@@ -177,5 +178,6 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }
