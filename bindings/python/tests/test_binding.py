@@ -1,11 +1,12 @@
 from unittest import TestCase
 
-import tree_sitter, tree_sitter_printf
+from tree_sitter import Language, Parser
+import tree_sitter_printf
 
 
 class TestLanguage(TestCase):
     def test_can_load_grammar(self):
         try:
-            tree_sitter.Language(tree_sitter_printf.language())
+            Parser(Language(tree_sitter_printf.language()))
         except Exception:
-            self.fail("Error loading printf grammar")
+            self.fail("Error loading printf format grammar")

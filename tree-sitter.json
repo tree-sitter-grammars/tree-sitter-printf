@@ -3,6 +3,7 @@
     {
       "name": "printf",
       "scope": "source.printf",
+      "title": "printf format",
       "highlights": "queries/highlights.scm"
     }
   ],
@@ -16,6 +17,10 @@
     "authors": [
       {
         "name": "Peter Stuifzand"
+      },
+      {
+        "name": "ObserverOfTime",
+        "email": "chronobserver@disroot.org"
       }
     ]
   }

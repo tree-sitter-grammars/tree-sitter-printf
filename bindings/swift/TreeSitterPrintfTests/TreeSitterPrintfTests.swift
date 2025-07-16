@@ -7,6 +7,6 @@ final class TreeSitterPrintfTests: XCTestCase {
         let parser = Parser()
         let language = Language(language: tree_sitter_printf())
         XCTAssertNoThrow(try parser.setLanguage(language),
-                         "Error loading Printf grammar")
+                         "Error loading printf format grammar")
     }
 }
