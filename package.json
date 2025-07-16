@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-printf",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "printf format grammar for tree-sitter",
   "repository": "https://github.com/tree-sitter-grammars/tree-sitter-printf",
   "license": "ISC",

@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "description": "printf format grammar for tree-sitter",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "license": "ISC",
     "links": {
       "repository": "https://github.com/tree-sitter-grammars/tree-sitter-printf"
