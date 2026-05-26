@@ -1,0 +1,35 @@
+// printf grammar for tree-sitter (native DSL).
+// Translated from grammar.js.
+
+grammar {
+    language: "printf",
+}
+
+rule format_string { repeat(choice(_text, format, "%%")) }
+
+rule format {
+    seq(
+        "%",
+        optional(flags),
+        optional(width),
+        optional(precision),
+        optional(size),
+        type,
+    )
+}
+
+rule type { regexp(r"[a-zA-Z]") }
+
+rule flags { regexp(r"[-#0 +'I]") }
+
+rule width { regexp(r"0?[0-9]+|\*") }
+
+rule precision { regexp(r"\.([0-9]*|\*)") }
+
+rule size {
+    token(prec(1, choice(
+        "hh", "h", "l", "ll", "L", "j", "z", "t", "I", "I32", "I64", "w",
+    )))
+}
+
+rule _text { prec(-1, regexp(r"[^%]+")) }
