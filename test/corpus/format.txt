@@ -53,3 +53,19 @@
   (format
     (flags)
     (type)))
+
+================================================================================
+Standalone w verb and wide-character size modifiers
+================================================================================
+
+%w %ws %wc %-10w %5ws%w followed by text
+
+--------------------------------------------------------------------------------
+
+(format_string
+  (format (type))
+  (format (size) (type))
+  (format (size) (type))
+  (format (flags) (width) (type))
+  (format (width) (size) (type))
+  (format (type)))
