@@ -69,23 +69,72 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "size"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "size"
+                    },
+                    {
+                      "type": "BLANK"
+                    }
+                  ]
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "type"
+                }
+              ]
             },
             {
-              "type": "BLANK"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "w"
+                  },
+                  "named": true,
+                  "value": "size"
+                },
+                {
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "IMMEDIATE_TOKEN",
+                    "content": {
+                      "type": "PREC",
+                      "value": 1,
+                      "content": {
+                        "type": "PATTERN",
+                        "value": "[a-zA-Z]"
+                      }
+                    }
+                  },
+                  "named": true,
+                  "value": "type"
+                }
+              ]
             }
           ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "type"
         }
       ]
     },
     "type": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z]"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[a-vx-zA-Z]"
+        },
+        {
+          "type": "STRING",
+          "value": "w"
+        }
+      ]
     },
     "flags": {
       "type": "PATTERN",
@@ -150,10 +199,6 @@
             {
               "type": "STRING",
               "value": "I64"
-            },
-            {
-              "type": "STRING",
-              "value": "w"
             }
           ]
         }

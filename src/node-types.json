@@ -47,6 +47,11 @@
     }
   },
   {
+    "type": "type",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "%",
     "named": false
   },
@@ -67,8 +72,8 @@
     "named": true
   },
   {
-    "type": "type",
-    "named": true
+    "type": "w",
+    "named": false
   },
   {
     "type": "width",

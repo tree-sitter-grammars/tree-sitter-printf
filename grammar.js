@@ -20,12 +20,15 @@ module.exports = grammar({
       optional($.flags),
       optional($.width),
       optional($.precision),
-      optional($.size),
-      $.type
+      choice(
+        seq(optional($.size), $.type),
+        // A bare w is a verb; as a size modifier it must have an adjacent type.
+        seq(alias('w', $.size), alias(token.immediate(prec(1, /[a-zA-Z]/)), $.type)),
+      )
     ),
 
     // TODO: restrict?
-    type: _ => /[a-zA-Z]/,
+    type: _ => choice(/[a-vx-zA-Z]/, 'w'),
 
     flags: _ => /[-#0 +'I]/,
 
@@ -45,7 +48,6 @@ module.exports = grammar({
       'I',
       'I32',
       'I64',
-      'w',
     ))),
 
     _text: _ => prec(-1, /[^%]+/)
